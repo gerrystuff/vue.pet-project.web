@@ -30,15 +30,15 @@ function create(req, res) {
     }
 
 
-    if (boardGame.year) {
+    // if (boardGame.year) {
 
-        if (boardGame.year.lenght !== 4) {
-            return res.json({
-                ok: false,
-                message: "Invalid year."
-            })
-        }
-    }
+    //     if (boardGame.year.lenght !== 4) {
+    //         return res.json({
+    //             ok: false,
+    //             message: "Invalid year."
+    //         })
+    //     }
+    // }
 
     let script = "INSERT INTO boardgames set ?"
 

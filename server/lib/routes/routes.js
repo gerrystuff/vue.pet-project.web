@@ -8,10 +8,10 @@ const { listFav, createFav, deletFav } = require('../controllers/favorites_contr
 
 //Boardgame routes
 
-routes.get('/', list);
-routes.post('/create', create);
+routes.get('/boardgame', list);
+routes.post('/boardgame', create);
 routes.get('/boardgame/:id', getOne);
-routes.post('/boardgame/:id', edit);
+routes.put('/boardgame/:id', edit);
 routes.delete('/boardgame/:id', delet);
 
 //Favorites routes
