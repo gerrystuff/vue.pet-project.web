@@ -46,8 +46,9 @@ export default new Vuex.Store({
     getBoardgame({commit}, {id, onComplete, onError}) {
       axios.get(`http://localhost:8080/boardgame/${id}`)
       .then(res => {
-        commit('SET_BOARDGAME', res.data.result);
+        commit('SET_BOARDGAME', res.data.data);
         onComplete(res);
+        console.log("res", res);
       })
       .catch(onError);
     },

@@ -7,7 +7,7 @@
         <b-button-group>
           <b-button :to="`/detail/${id}`" variant="success">Detail</b-button>
           <b-button :to="`/edit/${id}`" variant="warning">Edit</b-button>
-          <b-button variant="danger">Delete</b-button>
+          <b-button  variant="danger">Delete</b-button>
         </b-button-group>
       </div>
     </template>

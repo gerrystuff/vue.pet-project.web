@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Edit {{boardgame.name}}</h1>
-    <form @submit.prevent="saveBoardgame()">
+    <form @submit.prevent="editBoardgame()">
       <Input
         v-model="boardgame.id"
         titulo="ID"
@@ -58,7 +58,7 @@
 
 <script>
 import Vue from 'vue';
-import { mapActions, mapState } from 'vuex';
+import { mapActions } from 'vuex';
 import Input from '../components/Input.vue';
 
 export default {
@@ -80,7 +80,6 @@ export default {
     }
   },
   computed: {
-    ...mapState(['boardgame']),
     validateName(){
       return (this.boardgame.name !== undefined && this.boardgame.name.trim() !== '')
     },
@@ -116,11 +115,11 @@ export default {
       }
     }
   },
-  created() {
+  mounted() {
     this.getBoardgame({
       id: this.$route.params.id,
       onComplete: (response) => {
-        Vue.set(this, "boardgame", response.data.result);
+        Vue.set(this, "boardgame", response.data.data[0]);
       }
     })
   }

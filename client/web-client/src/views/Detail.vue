@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{boardgame.name}}</h1>
+    <h1>{{this.boardgame.name}}</h1>
   </div>
 </template>
 
@@ -8,6 +8,11 @@
 import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Detail',
+  data() {
+    return {
+      // boardgame: {}
+    }
+  },
   computed: {
     ...mapState(['boardgame'])
   },
